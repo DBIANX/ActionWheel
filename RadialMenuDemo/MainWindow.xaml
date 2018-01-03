@@ -1,0 +1,186 @@
+﻿<Window x:Name="MainWindows" x:Class="RadialMenuDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:RadialMenu="clr-namespace:RadialMenu.Controls;assembly=RadialMenu" 
+        xmlns:Converters="clr-namespace:RadialMenuDemo.Utils"
+        
+        Title="Action Wheel" Height="430" Width="650" Activated="Window_Activated" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" ResizeMode="NoResize" ShowInTaskbar="False" WindowState="Maximized" Icon="app.ico">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Utils/Icons.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid Grid.Row="0">
+            <RadialMenu:RadialMenu x:Name="mainMenu" IsOpen="{Binding IsOpen1}" Background="#FFF3F3F3" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="None">
+
+                <RadialMenu:RadialMenu.CentralItem>
+                    <RadialMenu:RadialMenuCentralItem x:Name="CentralMenu1" Command="{Binding CloseRadialMenu1}">
+                        <Rectangle Width="25" Height="25">
+                            <Rectangle.Fill>
+                                <VisualBrush Visual="{StaticResource appbar_close}"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </RadialMenu:RadialMenuCentralItem>
+                </RadialMenu:RadialMenu.CentralItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding OpenNotifications}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="NotificationsOption" Source="Utils/Notifications.png" Width="50px" Height="50px"/>
+                        
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding OpenKeyboard}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="keyboardOption" Source="Utils/Keyboard.png" Width="50px" Height="50px"/>
+                        
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding OpenCortana}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="CortanaOption" Source="Utils/Cortana.png" Width="50px" Height="50px"/>
+                        
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding OpenTaskMngr}">
+                    <WrapPanel Orientation="Vertical">
+
+                        <Image x:Name="TaskOption" Width="50px" Height="50px" Source="Utils/tasks.png"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding RunSleep}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="SleepOption" Source="Utils/Sleep.png" Width="50px" Height="50px"/>
+                        
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+            </RadialMenu:RadialMenu>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RadialMenu:RadialMenu x:Name="mainMenu2" IsOpen="{Binding IsOpen2}" HalfShiftedItems="True" Background="#FFF3F3F3" Cursor="None">
+
+                <RadialMenu:RadialMenu.CentralItem>
+                    <RadialMenu:RadialMenuCentralItem x:Name="CentralMenu2" Command="{Binding CloseRadialMenu2}">
+                        <Rectangle Width="25" Height="25">
+                            <Rectangle.Fill>
+                                <VisualBrush Visual="{StaticResource appbar_close}"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </RadialMenu:RadialMenuCentralItem>
+                </RadialMenu:RadialMenu.CentralItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding PlayPause}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="playOption" Source="Utils/play.png" Width="50px" Height="50px"/>
+                        
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding NextTrack}">
+                    <WrapPanel Orientation="Vertical">
+                        
+                            <Image x:Name="nextTrackOption" Source="Utils/nextTrack.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding Mute}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="muteOption" Source="Utils/mute.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding Stop}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="stopOption" Source="Utils/stop.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding PrevTrack}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="prevTrackOption" Source="Utils/prevTrack.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+            </RadialMenu:RadialMenu>
+            
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <RadialMenu:RadialMenu x:Name="mainMenu3" IsOpen="{Binding IsOpen3}" HalfShiftedItems="True" Background="#FFF3F3F3" Cursor="None">
+
+                <RadialMenu:RadialMenu.CentralItem>
+                    <RadialMenu:RadialMenuCentralItem x:Name="CentralMenu3" Command="{Binding CloseRadialMenu3}">
+                        <Rectangle Width="25" Height="25">
+                            <Rectangle.Fill>
+                                <VisualBrush Visual="{StaticResource appbar_close}"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </RadialMenu:RadialMenuCentralItem>
+                </RadialMenu:RadialMenu.CentralItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding Refresh}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="refreshOption" Source="Utils/refresh.png" Width="50px" Height="50px"/>
+
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding NextPage}">
+                    <WrapPanel Orientation="Vertical">
+
+                        <Image x:Name="nextpageOption" Source="Utils/nextPage.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding FullScreen}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="fullscreenOption" Source="Utils/fullscreen.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding YoutubeNext}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="youtubeNextOption" Source="Utils/youtubeNext.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+
+
+                <RadialMenu:RadialMenuItem Command="{Binding YoutubePlay}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="youtubePlayOption" Source="Utils/youtubePlay.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding YoutubePrev}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="youtubePrevOption" Source="Utils/youtubePrev.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding NewTab}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="newTabOption" Source="Utils/newTab.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+                <RadialMenu:RadialMenuItem Command="{Binding PrevPage}">
+                    <WrapPanel Orientation="Vertical">
+                        <Image x:Name="prevpageOption" Source="Utils/prevPage.png" Width="50px" Height="50px"/>
+                    </WrapPanel>
+                </RadialMenu:RadialMenuItem>
+
+            </RadialMenu:RadialMenu>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
