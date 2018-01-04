@@ -425,10 +425,10 @@ namespace RadialMenuDemo
                         
                         RECT r;
 
-                        r.left = (int)(width - 100);
-                        r.top = (int)(height - 100);
-                        r.right = (int)(width + 100);
-                        r.bottom = (int)(height + 100);
+                        r.left = (int)(width - 90);
+                        r.top = (int)(height - 90);
+                        r.right = (int)(width + 90);
+                        r.bottom = (int)(height + 90);
                         ClipCursor(ref r);
                     }
                    
@@ -455,10 +455,10 @@ namespace RadialMenuDemo
                         
                         RECT r;
 
-                        r.left = (int)(width - 100);
-                        r.top = (int)(height - 100);
-                        r.right = (int)(width + 100);
-                        r.bottom = (int)(height + 100);
+                        r.left = (int)(width - 90);
+                        r.top = (int)(height - 90);
+                        r.right = (int)(width + 90);
+                        r.bottom = (int)(height + 90);
 
 
 
@@ -488,10 +488,10 @@ namespace RadialMenuDemo
                         
                         RECT r;
 
-                        r.left = (int)(width - 100);
-                        r.top = (int)(height - 100);
-                        r.right = (int)(width + 100);
-                        r.bottom = (int)(height + 100);
+                        r.left = (int)(width - 90);
+                        r.top = (int)(height - 90);
+                        r.right = (int)(width + 90);
+                        r.bottom = (int)(height + 90);
                         ClipCursor(ref r);
 
                        
