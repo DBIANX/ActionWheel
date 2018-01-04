@@ -312,9 +312,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Utils\exit.png" />
     <Resource Include="Utils\tasks.png" />
   </ItemGroup>
