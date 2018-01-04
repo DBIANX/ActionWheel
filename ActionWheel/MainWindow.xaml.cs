@@ -11,8 +11,6 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
 using WPFTabTip;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
 
 namespace RadialMenuDemo
 {
@@ -335,7 +333,7 @@ namespace RadialMenuDemo
         {
             InitializeComponent();
             DataContext = this;
-            AppCenter.Start("7f4ac755-6b07-4f05-9f63-afcef7075a94", typeof(Analytics));
+            
             timerOpenRightMenu = new DispatcherTimer();
             timerOpenRightMenu.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timerOpenRightMenu.Tick += new EventHandler(timerMenu_Tick);
