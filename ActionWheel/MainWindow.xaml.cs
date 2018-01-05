@@ -4,6 +4,7 @@ using RadialMenuDemo.Utils;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -333,7 +334,6 @@ namespace RadialMenuDemo
         {
             InitializeComponent();
             DataContext = this;
-            
             timerOpenRightMenu = new DispatcherTimer();
             timerOpenRightMenu.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timerOpenRightMenu.Tick += new EventHandler(timerMenu_Tick);
@@ -341,9 +341,19 @@ namespace RadialMenuDemo
             
             kb = new KeyboardController();
             Subscribe();
+                        
         }
 
-        
+        private void App_Exit(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Open_Settings(object sender, RoutedEventArgs e)
+        {
+            Config config = new Config();
+            config.Show();
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
