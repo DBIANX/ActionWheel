@@ -244,6 +244,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Configs.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

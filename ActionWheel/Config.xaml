@@ -12,6 +12,6 @@
         <Label Content="Multimedia actions (2nd menu)" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtFirstHotkey" HorizontalAlignment="Left" Height="23" Margin="199,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
         <TextBox x:Name="txtSecondHotkey" HorizontalAlignment="Left" Height="23" Margin="199,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="16,152,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="16,152,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
     </Grid>
 </Window>

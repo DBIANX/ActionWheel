@@ -11,7 +11,7 @@
     
     <Grid>
         <Grid Grid.Row="4">
-            <tb:TaskbarIcon ToolTip="Action Wheel" IconSource="Utils/app.ico" MenuActivation="LeftOrRightClick">
+            <tb:TaskbarIcon x:Name="tbIcon" ToolTip="Action Wheel" IconSource="Utils/app.ico" MenuActivation="LeftOrRightClick">
                 <tb:TaskbarIcon.ContextMenu>
                     <ContextMenu>
                         <MenuItem Click="Open_Settings" Header="Settings" />

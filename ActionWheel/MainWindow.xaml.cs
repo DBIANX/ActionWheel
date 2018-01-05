@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
 using WPFTabTip;
+using Hardcodet.Wpf.TaskbarNotification;
 
 namespace RadialMenuDemo
 {
@@ -67,6 +68,8 @@ namespace RadialMenuDemo
         int middleScreenPosH;
         int middleScreenPosV;
 
+        string hkone = "";
+        string hktwo = "";
         DispatcherTimer timerOpenRightMenu;
 
         private bool _isOpen1 = false;
@@ -341,7 +344,34 @@ namespace RadialMenuDemo
             
             kb = new KeyboardController();
             Subscribe();
-                        
+
+            //get config data
+            string[] stringSeparators = new string[] { "=" };
+            TextReader tr = new StreamReader(@"Configs.txt");
+
+            string[] lineas = new string[] { "", "" };
+
+            using (StreamReader sr = new StreamReader(@"Configs.txt"))
+            {
+                int i = 0;
+                while (sr.Peek() >= 0)
+                {
+                    lineas[i] = sr.ReadLine();
+                    i++;
+                }
+            }
+
+            string[] partshk1 = new string[] { };
+            partshk1 = lineas[0].Split(stringSeparators, StringSplitOptions.None);
+
+            string[] partshk2 = new string[] { };
+            partshk2 = lineas[1].Split(stringSeparators, StringSplitOptions.None);
+
+            hkone = partshk1[1].ToString();
+            hktwo = partshk2[1].ToString();
+
+
+            
         }
 
         private void App_Exit(object sender, RoutedEventArgs e)
@@ -395,7 +425,9 @@ namespace RadialMenuDemo
         private void GlobalHookKeyPress(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             string keydown = e.KeyCode.ToString();
-            if ((keydown == "F7")||(keydown == "F8"))
+
+
+            if ((keydown == hkone)||(keydown == hktwo))
             {
                 if (openRightMenu == false)
                 {
@@ -411,7 +443,12 @@ namespace RadialMenuDemo
 
                 string keyDown = e.KeyCode.ToString();
 
-                if ((keys[(int)Keys.F7] & keys[(int)Keys.F8] & 128) == 128)
+                KeysConverter str = new KeysConverter();
+                int hkoneint = (int)str.ConvertFromString(hkone);
+                int hktwoint = (int)str.ConvertFromString(hktwo);
+
+
+                if ((keys[hkoneint] & keys[hktwoint] & 128) == 128)
                 {
                     
                     System.Windows.Application.Current.MainWindow.WindowState = WindowState.Maximized;
@@ -441,7 +478,7 @@ namespace RadialMenuDemo
                     }
                    
                 }
-                else if ((keys[(int)Keys.F7] & 128) == 128)
+                else if ((keys[hkoneint] & 128) == 128)
                 {
                    
                     System.Windows.Application.Current.MainWindow.WindowState = WindowState.Maximized;
@@ -474,7 +511,7 @@ namespace RadialMenuDemo
                     }
                    
                 }
-                else if ((keys[(int)Keys.F8] & 128) == 128)
+                else if ((keys[hktwoint] & 128) == 128)
                 {
                     
                     System.Windows.Application.Current.MainWindow.WindowState = WindowState.Maximized;
@@ -514,9 +551,11 @@ namespace RadialMenuDemo
         private void GlobalHookKeyUp(object sender, System.Windows.Forms.KeyEventArgs e)
         {
             string keyUp = e.KeyCode.ToString();
+
+            KeysConverter str = new KeysConverter();
             
 
-            if(keyUp == "F7")
+            if (keyUp == hkone)
             {
                 if(flagOpen1 == true)
                 {
@@ -542,7 +581,7 @@ namespace RadialMenuDemo
                     
                 }
             }
-            else if(keyUp == "F8")
+            else if(keyUp == hktwo)
             {
                 if (flagOpen2 == true)
                 {

@@ -50,5 +50,20 @@ namespace RadialMenuDemo
             txtSecondHotkey.Text = partshk2[1].ToString();
 
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            string path = @"Configs.txt";
+            File.WriteAllText(path, String.Empty);
+
+            // Example #1: Write an array of strings to a file.
+            // Create a string array that consists of three lines.
+            string[] lines = { "1="+txtFirstHotkey.Text, "2="+txtSecondHotkey.Text };
+            // WriteAllLines creates a file, writes a collection of strings to the file,
+            // and then closes the file.  You do NOT need to call Flush() or Close().
+            System.IO.File.WriteAllLines(@"Configs.txt", lines);
+
+            MessageBox.Show("Settings saved");
+        }
     }
 }
