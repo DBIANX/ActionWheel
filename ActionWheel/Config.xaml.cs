@@ -63,7 +63,7 @@ namespace RadialMenuDemo
             // and then closes the file.  You do NOT need to call Flush() or Close().
             System.IO.File.WriteAllLines(@"Configs.txt", lines);
 
-            MessageBox.Show("Settings saved");
+            MessageBox.Show("Settings saved", "Action Wheel", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
