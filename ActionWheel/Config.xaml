@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Settings" Height="222.18" Width="300" Icon="Utils/app.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Edit hotkeys" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Edit hotkeys" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Basic actions (1st menu)" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
         <Label Content="Multimedia actions (2nd menu)" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtFirstHotkey" HorizontalAlignment="Left" Height="23" Margin="199,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
